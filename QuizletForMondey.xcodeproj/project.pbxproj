@@ -7,15 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7761419A26FA0D7000E3F9C0 /* AlertFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7761419926FA0D7000E3F9C0 /* AlertFile.swift */; };
+		7773934326FA357E0026D3D6 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7773934226FA357E0026D3D6 /* UserSettings.swift */; };
 		7776952F26F92B0B002846A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7776952E26F92B0B002846A8 /* AppDelegate.swift */; };
 		7776953126F92B0B002846A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7776953026F92B0B002846A8 /* SceneDelegate.swift */; };
 		7776953326F92B0B002846A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7776953226F92B0B002846A8 /* ViewController.swift */; };
 		7776953626F92B0B002846A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7776953426F92B0B002846A8 /* Main.storyboard */; };
 		7776953826F92B0D002846A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7776953726F92B0D002846A8 /* Assets.xcassets */; };
 		7776953B26F92B0D002846A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7776953926F92B0D002846A8 /* LaunchScreen.storyboard */; };
+		7776954326F92DAC002846A8 /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7776954226F92DAC002846A8 /* DescriptionViewController.swift */; };
+		7776954626F93375002846A8 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7776954426F93375002846A8 /* TaskTableViewCell.swift */; };
+		7776954726F93375002846A8 /* TaskTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7776954526F93375002846A8 /* TaskTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7761419926FA0D7000E3F9C0 /* AlertFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFile.swift; sourceTree = "<group>"; };
+		7773934226FA357E0026D3D6 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		7776952B26F92B0B002846A8 /* QuizletForMondey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizletForMondey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7776952E26F92B0B002846A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7776953026F92B0B002846A8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +31,9 @@
 		7776953726F92B0D002846A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7776953A26F92B0D002846A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7776953C26F92B0D002846A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7776954226F92DAC002846A8 /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
+		7776954426F93375002846A8 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		7776954526F93375002846A8 /* TaskTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +73,11 @@
 				7776953726F92B0D002846A8 /* Assets.xcassets */,
 				7776953926F92B0D002846A8 /* LaunchScreen.storyboard */,
 				7776953C26F92B0D002846A8 /* Info.plist */,
+				7776954226F92DAC002846A8 /* DescriptionViewController.swift */,
+				7776954426F93375002846A8 /* TaskTableViewCell.swift */,
+				7776954526F93375002846A8 /* TaskTableViewCell.xib */,
+				7761419926FA0D7000E3F9C0 /* AlertFile.swift */,
+				7773934226FA357E0026D3D6 /* UserSettings.swift */,
 			);
 			path = QuizletForMondey;
 			sourceTree = "<group>";
@@ -124,6 +139,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7776954726F93375002846A8 /* TaskTableViewCell.xib in Resources */,
 				7776953B26F92B0D002846A8 /* LaunchScreen.storyboard in Resources */,
 				7776953826F92B0D002846A8 /* Assets.xcassets in Resources */,
 				7776953626F92B0B002846A8 /* Main.storyboard in Resources */,
@@ -139,6 +155,10 @@
 			files = (
 				7776953326F92B0B002846A8 /* ViewController.swift in Sources */,
 				7776952F26F92B0B002846A8 /* AppDelegate.swift in Sources */,
+				7776954626F93375002846A8 /* TaskTableViewCell.swift in Sources */,
+				7776954326F92DAC002846A8 /* DescriptionViewController.swift in Sources */,
+				7773934326FA357E0026D3D6 /* UserSettings.swift in Sources */,
+				7761419A26FA0D7000E3F9C0 /* AlertFile.swift in Sources */,
 				7776953126F92B0B002846A8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
