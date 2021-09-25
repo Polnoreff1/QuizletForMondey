@@ -16,6 +16,9 @@ class TaskTableViewCell: UITableViewCell {
     //MARK: - IBOutlet
     @IBOutlet var title: UILabel!
     @IBOutlet var cellSwitch: UISwitch!
+    @IBOutlet var imageCell: UIImageView!
+    
+    //MARK: - Property
     var delegate: CustomTVCDelegate?
     
     //MARK: - Life cycle
@@ -27,8 +30,15 @@ class TaskTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    //MARK: - IBAction
     @IBAction func actionForCellSwitch(_ sender: Any) {
         delegate?.switchIsPushed(cell: self)
+        switch cellSwitch.isOn {
+        case true:
+            imageCell.image = UIImage(imageLiteralResourceName: "trueDone")
+        case false:
+            imageCell.image = UIImage(imageLiteralResourceName: "done")
+        }
     }
 }
 

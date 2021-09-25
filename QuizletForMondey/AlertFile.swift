@@ -29,10 +29,8 @@ extension UIViewController {
                 }
             }
                 let cancelAction = UIAlertAction(title: "Отмена", style: .destructive, handler: nil)
-                alert.addAction(saveAction)
                 alert.addAction(cancelAction)
+                alert.addAction(saveAction)
                 present(alert, animated: true, completion: nil)
             }
-    
-    
 }

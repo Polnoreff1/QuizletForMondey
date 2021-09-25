@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7761419A26FA0D7000E3F9C0 /* AlertFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7761419926FA0D7000E3F9C0 /* AlertFile.swift */; };
+		777287E026FF529E00AC82EB /* SecondTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777287DF26FF529E00AC82EB /* SecondTabViewController.swift */; };
 		7773934326FA357E0026D3D6 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7773934226FA357E0026D3D6 /* UserSettings.swift */; };
 		7776952F26F92B0B002846A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7776952E26F92B0B002846A8 /* AppDelegate.swift */; };
 		7776953126F92B0B002846A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7776953026F92B0B002846A8 /* SceneDelegate.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		7761419926FA0D7000E3F9C0 /* AlertFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFile.swift; sourceTree = "<group>"; };
+		777287DF26FF529E00AC82EB /* SecondTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTabViewController.swift; sourceTree = "<group>"; };
 		7773934226FA357E0026D3D6 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		7776952B26F92B0B002846A8 /* QuizletForMondey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizletForMondey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7776952E26F92B0B002846A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				7776954526F93375002846A8 /* TaskTableViewCell.xib */,
 				7761419926FA0D7000E3F9C0 /* AlertFile.swift */,
 				7773934226FA357E0026D3D6 /* UserSettings.swift */,
+				777287DF26FF529E00AC82EB /* SecondTabViewController.swift */,
 			);
 			path = QuizletForMondey;
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 			files = (
 				7776953326F92B0B002846A8 /* ViewController.swift in Sources */,
 				7776952F26F92B0B002846A8 /* AppDelegate.swift in Sources */,
+				777287E026FF529E00AC82EB /* SecondTabViewController.swift in Sources */,
 				7776954626F93375002846A8 /* TaskTableViewCell.swift in Sources */,
 				7776954326F92DAC002846A8 /* DescriptionViewController.swift in Sources */,
 				7773934326FA357E0026D3D6 /* UserSettings.swift in Sources */,

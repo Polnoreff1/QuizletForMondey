@@ -14,28 +14,15 @@ class ViewController: UIViewController {
     
     //MARK: - Property
     private var currentCellString: String = ""
-    var currentCellBool: Bool = false
     var currentCellDict: Dictionary<String, Bool> = [:]
     private var array: [Dictionary<String, Bool>] = []
-    var index = 0
+    private var index = 0
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        print(array)
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        //Вот тут я так понимаю надо брать резалты,хотя та функция которая возвращает резалты прописана, но возвращается разный результат
-//        favItems = RealmService.shared.getFavouriteRecipe()
-//        loadRecipes()
-//        tableView.reloadData()
-    }
-
-    //MARK: - Override method
-    
-    
     
     //MARK: - IBAction
     @IBAction func AddNewTask(_ sender: UIBarButtonItem) {
@@ -44,11 +31,11 @@ class ViewController: UIViewController {
             UserSettings.task = self.array
             self.tableView.reloadData()
         }
+        setupUI()
     }
 }
 
-
-//MARK: - TableDataSource
+    //MARK: - TableDataSource
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,40 +45,58 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell") as! TaskTableViewCell
         let currentPair = array[indexPath.row]
-        for (key,value) in currentPair {
+        currentPair.forEach { key,value in
             cell.title.text = key
             cell.cellSwitch.isOn = value
-            print("hello")
+            switch cell.cellSwitch.isOn {
+            case true:
+                cell.imageCell.image = UIImage(imageLiteralResourceName: "trueDone")
+            case false:
+                cell.imageCell.image = UIImage(imageLiteralResourceName: "done")
+            }
         }
-        
         cell.delegate = self
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        index = indexPath.row
+                index = indexPath.row
                 currentCellDict = array[indexPath.row]
-                for (key,value) in currentCellDict {
-                    currentCellString = key
-                    currentCellBool = value
-                }
                 performSegue(withIdentifier: "showDesc", sender: nil)
                 tableView.deselectRow(at: indexPath, animated: true)
             }
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+
+        let swipeDelete = UIContextualAction(style: .normal, title: "Delete") { (_,_,completionHandler) in
+            self.tableView.performBatchUpdates({
+                self.array.remove(at: indexPath.row)
+                UserSettings.task = self.array
+                self.tableView.deleteRows(at: [indexPath], with: .fade)
+            }, completion: { _ in
+                completionHandler(true)
+            })
+
+        }
+        swipeDelete.backgroundColor = .white
+        swipeDelete.image = #imageLiteral(resourceName: "trash")
+        let conf1 = UISwipeActionsConfiguration(actions: [swipeDelete])
+        conf1.performsFirstActionWithFullSwipe = false
+        return conf1
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             guard segue.identifier == "showDesc" else { return }
             let dvc = segue.destination as? DescriptionViewController
-            for (key,value) in currentCellDict {
+            currentCellDict.forEach { key,value in
                 dvc?.taskStr = key
                 dvc?.tempState = value
             }
             dvc!.closure = {
             self.array = UserSettings.task
             self.tableView.reloadData()
-        }
-        
-        dvc!.closureForSwitch = {
+            }
+            dvc!.closureForSwitch = {
             self.currentCellDict.forEach { key,value in
                 var tempState = value
                     tempState.toggle()
@@ -104,22 +109,21 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-extension ViewController {
+private extension ViewController {
     
     func setupUI() {
         tableView.delegate = self
         tableView.dataSource = self
         array = UserSettings.task ?? []
         tableView.register(UINib(nibName: "TaskTableViewCell", bundle: nil), forCellReuseIdentifier: "taskCell")
-        tableView.estimatedRowHeight = 85
-        tableView.rowHeight = UITableView.automaticDimension
+        tableView.rowHeight  = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 80
     }
-    
-    
 }
 
 
 extension ViewController: CustomTVCDelegate {
+    
     func switchIsPushed(cell: UITableViewCell) {
         let idexPath = self.tableView.indexPath(for: cell)
         var temp = array[idexPath!.row]
@@ -130,12 +134,6 @@ extension ViewController: CustomTVCDelegate {
         }
         array.remove(at: idexPath!.row)
         array.insert(temp, at: idexPath!.row)
-        print(temp)
-        print(array)
         UserSettings.task = array
     }
-    
-    
-    
-    
 }

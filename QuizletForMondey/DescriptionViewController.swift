@@ -15,10 +15,10 @@ class DescriptionViewController: UIViewController {
     
     //MARK: - Property
     var taskStr: String = ""
-    var tempArray: [String: Bool] = [:]
     var closure: (() -> ())?
     var closureForSwitch: (() -> ())?
-    var tempState = false
+    var tempState: Bool = false
+    
     //MARK: - LyfeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,36 +28,38 @@ class DescriptionViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         closure?()
     }
-
-    
-    
     
     //MARK: - IBAction
     @IBAction func addNewFromSecondVC(_ sender: Any) {
         addAlertForNewItem { text in
             self.saveFiles(s: text)
         }
-        
-        navigationController?.popToRootViewController(animated: true)
     }
+    
     @IBAction func secondSwitchAction(_ sender: Any) {
         closureForSwitch?()
     }
-    
-    
-    
 }
 
-private extension DescriptionViewController {
+extension DescriptionViewController {
     
     func setupUI() {
         mainSwitch.setOn(tempState, animated: true)
         taskTextView.text = taskStr
         taskTextView.layer.borderWidth = 1
-        taskTextView.layer.borderColor = UIColor.green.cgColor
+        switch tempState {
+        case true:
+            taskTextView.layer.borderColor = UIColor.green.cgColor
+        case false:
+            taskTextView.layer.borderColor = UIColor.red.cgColor
+        }
         taskTextView.clipsToBounds = false
         taskTextView.layer.shadowOpacity = 0.4
-        taskTextView.layer.shadowOffset = CGSize(width: 3, height: 3)
+        taskTextView.layer.shadowOffset = CGSize(width: 6, height: 6)
+    }
+    
+    internal override func viewDidLayoutSubviews() {
+        taskTextView.layer.cornerRadius = 15
     }
     
     func saveFiles(s: String) {
@@ -65,4 +67,3 @@ private extension DescriptionViewController {
     }
     
 }
-

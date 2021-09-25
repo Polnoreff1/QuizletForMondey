@@ -8,21 +8,39 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Second Tab View Controller-->
         <scene sceneID="ACT-ob-Ga2">
             <objects>
-                <viewController id="zMm-5P-gfJ" sceneMemberID="viewController">
+                <viewController id="zMm-5P-gfJ" customClass="SecondTabViewController" customModule="QuizletForMondey" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Mo-4g-CAI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Честно без понятия зачем нужна данная вкладка," textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="htv-qn-qyR">
+                                <rect key="frame" x="16" y="20" width="343" height="528"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="zCn-Q8-Qho"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zCn-Q8-Qho" firstAttribute="trailing" secondItem="htv-qn-qyR" secondAttribute="trailing" constant="16" id="AYc-R5-BgO"/>
+                            <constraint firstItem="htv-qn-qyR" firstAttribute="leading" secondItem="zCn-Q8-Qho" secondAttribute="leading" constant="16" id="BPE-0O-HV9"/>
+                            <constraint firstItem="zCn-Q8-Qho" firstAttribute="bottom" secondItem="htv-qn-qyR" secondAttribute="bottom" constant="70" id="LfI-je-hbX"/>
+                            <constraint firstItem="htv-qn-qyR" firstAttribute="top" secondItem="zCn-Q8-Qho" secondAttribute="top" constant="20" id="dmw-7f-0sw"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="more" id="bgs-0M-rac"/>
+                    <connections>
+                        <outlet property="SettingText" destination="htv-qn-qyR" id="crN-1k-eMz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gII-Te-hf0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="990" y="276"/>
+            <point key="canvasLocation" x="989.60000000000002" y="275.71214392803603"/>
         </scene>
         <!--Quizlet-->
         <scene sceneID="Wxz-JW-pTd">
@@ -34,7 +52,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="82c-NH-vg9">
                                 <rect key="frame" x="0.0" y="44" width="375" height="574"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="separatorColor" systemColor="systemTealColor"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FbK-cg-Zzr"/>
@@ -62,7 +80,7 @@
             </objects>
             <point key="canvasLocation" x="1900.0000000000002" y="-544.41964285714278"/>
         </scene>
-        <!--Description View Controller-->
+        <!--Полная информация-->
         <scene sceneID="l5D-QK-kq7">
             <objects>
                 <viewController storyboardIdentifier="DeskriptionVC" id="Bb8-Ku-vpA" customClass="DescriptionViewController" customModule="QuizletForMondey" customModuleProvider="target" sceneMemberID="viewController">
@@ -93,7 +111,7 @@
                                     </switch>
                                 </subviews>
                             </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pDJ-91-UDO">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pDJ-91-UDO">
                                 <rect key="frame" x="16" y="136" width="343" height="298"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -107,7 +125,7 @@
                             </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yNY-2j-FdI"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.96862745098039216" green="0.94675030820583694" blue="0.61958749362965393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Atv-0e-qvE" firstAttribute="leading" secondItem="yNY-2j-FdI" secondAttribute="leading" constant="16" id="0sh-1e-1wx"/>
                             <constraint firstItem="yNY-2j-FdI" firstAttribute="bottom" secondItem="pSx-vz-iYj" secondAttribute="bottom" constant="43" id="BrP-8p-uJJ"/>
@@ -119,7 +137,8 @@
                             <constraint firstItem="Atv-0e-qvE" firstAttribute="top" secondItem="yNY-2j-FdI" secondAttribute="top" constant="32" id="tIk-v8-AyB"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="RHq-kv-15P">
+                    <navigationItem key="navigationItem" title="Полная информация" id="RHq-kv-15P">
+                        <barButtonItem key="backBarButtonItem" title="Назад" id="RGX-xm-euN"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="wKJ-hj-eS4">
                             <connections>
                                 <action selector="addNewFromSecondVC:" destination="Bb8-Ku-vpA" id="D4o-Yh-oFv"/>
@@ -180,6 +199,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

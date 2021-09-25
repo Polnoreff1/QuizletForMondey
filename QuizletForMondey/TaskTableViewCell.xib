@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,67 +16,55 @@
                 <rect key="frame" x="0.0" y="0.0" width="434" height="72"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fUO-jL-PLn">
-                        <rect key="frame" x="5" y="5" width="424" height="62"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="done" translatesAutoresizingMaskIntoConstraints="NO" id="P90-6D-68x">
-                                <rect key="frame" x="6" y="6" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="7ZH-BW-z0h"/>
-                                    <constraint firstAttribute="height" constant="50" id="BfL-r7-SwC"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oSi-Hw-9W5">
-                                <rect key="frame" x="60" y="4" width="303" height="54"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2OR-li-Qwl">
-                                <rect key="frame" x="367" y="16" width="49" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="Wlu-VI-BvZ"/>
-                                    <constraint firstAttribute="width" constant="47" id="tMI-DX-D9m"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="actionForCellSwitch:" destination="KGk-i7-Jjw" eventType="valueChanged" id="SOR-8m-NgM"/>
-                                </connections>
-                            </switch>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="done" translatesAutoresizingMaskIntoConstraints="NO" id="ge0-YQ-7hJ">
+                        <rect key="frame" x="16" y="19" width="34" height="34"/>
                         <constraints>
-                            <constraint firstItem="oSi-Hw-9W5" firstAttribute="leading" secondItem="P90-6D-68x" secondAttribute="trailing" constant="4" id="BOW-bV-FRR"/>
-                            <constraint firstItem="2OR-li-Qwl" firstAttribute="leading" secondItem="oSi-Hw-9W5" secondAttribute="trailing" constant="4" id="Tf4-jd-8OI"/>
-                            <constraint firstItem="2OR-li-Qwl" firstAttribute="top" secondItem="fUO-jL-PLn" secondAttribute="top" constant="16" id="V26-Ww-e4J"/>
-                            <constraint firstAttribute="bottom" secondItem="2OR-li-Qwl" secondAttribute="bottom" constant="15" id="Wtk-mN-LY2"/>
-                            <constraint firstItem="oSi-Hw-9W5" firstAttribute="top" secondItem="fUO-jL-PLn" secondAttribute="top" constant="4" id="hcQ-23-RsW"/>
-                            <constraint firstItem="P90-6D-68x" firstAttribute="top" secondItem="fUO-jL-PLn" secondAttribute="top" constant="6" id="jDv-TJ-wKz"/>
-                            <constraint firstAttribute="trailing" secondItem="2OR-li-Qwl" secondAttribute="trailing" constant="10" id="qO7-aD-g1k"/>
-                            <constraint firstAttribute="bottom" secondItem="oSi-Hw-9W5" secondAttribute="bottom" constant="4" id="wIz-Yv-c1m"/>
-                            <constraint firstItem="P90-6D-68x" firstAttribute="leading" secondItem="fUO-jL-PLn" secondAttribute="leading" constant="6" id="zkY-0Y-Wsq"/>
+                            <constraint firstAttribute="width" constant="34" id="FBB-PJ-u6s"/>
+                            <constraint firstAttribute="height" constant="34" id="Gto-ES-28y"/>
                         </constraints>
-                    </view>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ok3-5d-t9Y">
+                        <rect key="frame" x="62" y="26" width="41.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xKt-pe-fSt">
+                        <rect key="frame" x="363" y="21" width="51" height="31"/>
+                        <connections>
+                            <action selector="actionForCellSwitch:" destination="KGk-i7-Jjw" eventType="valueChanged" id="ODp-eo-cT9"/>
+                        </connections>
+                    </switch>
                 </subviews>
+                <color key="backgroundColor" red="1" green="0.96485671502095438" blue="0.56338113049484839" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="fUO-jL-PLn" secondAttribute="trailing" constant="5" id="3tc-f7-sPy"/>
-                    <constraint firstAttribute="bottom" secondItem="fUO-jL-PLn" secondAttribute="bottom" constant="5" id="eLg-g3-NkN"/>
-                    <constraint firstItem="fUO-jL-PLn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="hyx-PT-BjO"/>
-                    <constraint firstItem="fUO-jL-PLn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="rDQ-JU-x4d"/>
+                    <constraint firstItem="xKt-pe-fSt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="21" id="3B0-LZ-M5o"/>
+                    <constraint firstItem="xKt-pe-fSt" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ok3-5d-t9Y" secondAttribute="trailing" constant="16" id="4nT-84-2DP"/>
+                    <constraint firstAttribute="trailing" secondItem="xKt-pe-fSt" secondAttribute="trailing" constant="22" id="W8v-kI-gjY"/>
+                    <constraint firstItem="Ok3-5d-t9Y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="26" id="b1B-cJ-q50"/>
+                    <constraint firstItem="Ok3-5d-t9Y" firstAttribute="leading" secondItem="ge0-YQ-7hJ" secondAttribute="trailing" constant="12" id="di3-S5-6U1"/>
+                    <constraint firstItem="ge0-YQ-7hJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="19" id="i0j-Dp-lYh"/>
+                    <constraint firstAttribute="bottom" secondItem="Ok3-5d-t9Y" secondAttribute="bottom" constant="25" id="tg4-4Q-VMh"/>
+                    <constraint firstItem="ge0-YQ-7hJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="wQh-wH-dcy"/>
                 </constraints>
+                <userDefinedRuntimeAttributes>
+                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                        <integer key="value" value="25"/>
+                    </userDefinedRuntimeAttribute>
+                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                </userDefinedRuntimeAttributes>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <gestureRecognizers/>
             <connections>
-                <outlet property="cellSwitch" destination="2OR-li-Qwl" id="DxR-ef-wIZ"/>
-                <outlet property="title" destination="oSi-Hw-9W5" id="nEE-na-rOM"/>
+                <outlet property="cellSwitch" destination="xKt-pe-fSt" id="fZO-xR-Qsq"/>
+                <outlet property="imageCell" destination="ge0-YQ-7hJ" id="iiP-UB-QCZ"/>
+                <outlet property="title" destination="Ok3-5d-t9Y" id="AG7-Tf-gi9"/>
             </connections>
             <point key="canvasLocation" x="214.49275362318843" y="190.84821428571428"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="done" width="64" height="64"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
